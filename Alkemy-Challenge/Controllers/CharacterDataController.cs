@@ -29,13 +29,19 @@ namespace Alkemy_Challenge.Controllers
                     cdReturn = cd;
                     break;
                 }
+            }
 
+            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
+            {
                 if (cd.Historia == historia)
                 {
                     cdReturn = cd;
                     break;
                 }
+            }
 
+            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
+            {
                 if (cd.Pelicula == pelicula)
                 {
                     cdReturn = cd;
