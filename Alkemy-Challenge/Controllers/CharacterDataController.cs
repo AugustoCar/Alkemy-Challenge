@@ -62,7 +62,10 @@ namespace Alkemy_Challenge.Controllers
                     cdReturn = cd;
                     break;
                 }
-
+            }
+            
+            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
+            {
                 if (cd.Peso == peso)
                 {
                     cdReturn = cd;
@@ -70,6 +73,7 @@ namespace Alkemy_Challenge.Controllers
                 }
             }
             return cdReturn;
+
         }
 
         // POST: api/CharacterData
