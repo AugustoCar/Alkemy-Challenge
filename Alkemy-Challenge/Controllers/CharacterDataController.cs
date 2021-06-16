@@ -18,13 +18,46 @@ namespace Alkemy_Challenge.Controllers
         }
 
         // GET: api/CharacterData/5
-        public DisneyCharacterData Get(string nombre)
+        public DisneyCharacterData Get(string nombre ,string historia, string pelicula)
         {
             DisneyCharacterData cdReturn = null;
             CharacterDataList cdLIst = new CharacterDataList();
             foreach(DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
             {
                 if(cd.Nombre == nombre)
+                {
+                    cdReturn = cd;
+                    break;
+                }
+
+                if (cd.Historia == historia)
+                {
+                    cdReturn = cd;
+                    break;
+                }
+
+                if (cd.Pelicula == pelicula)
+                {
+                    cdReturn = cd;
+                    break;
+                }
+            }
+            return cdReturn;
+        }
+
+        public DisneyCharacterData Get(int edad, int peso)
+        {
+            DisneyCharacterData cdReturn = null;
+            CharacterDataList cdLIst = new CharacterDataList();
+            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
+            {
+                if (cd.Edad == edad)
+                {
+                    cdReturn = cd;
+                    break;
+                }
+
+                if (cd.Peso == peso)
                 {
                     cdReturn = cd;
                     break;
