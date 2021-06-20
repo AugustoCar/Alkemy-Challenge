@@ -10,6 +10,7 @@ namespace Alkemy_Challenge.Models
         public string Nombre { get; set; }
         public string Historia { get; set; }
         public string Pelicula { get; set; }
+        public string Genero { get; set; }
         public int Edad { get; set; }
         public int Peso { get; set; }
     }
@@ -23,25 +24,28 @@ namespace Alkemy_Challenge.Models
             DisneyCharacterData cd = new DisneyCharacterData();
             cd.Nombre = "Tarzan";
             cd.Historia = "En este cuento animado de Disney, el huérfano Tarzán (Tony Goldwyn) crece en el remoto desierto africano, criado por el gentil gorila Kala (Glenn Close). Cuando una expedición británica entra en la jungla, Tarzán se encuentra con la hermosa Jane (Minnie Driver) y reconoce que, como ella, él es humano. Enamorado de Jane, Tarzán se debate entre abrazar la civilización y quedarse con su familia de gorilas, que se ve amenazada por el despiadado cazador Clayton (Brian Blessed).";
-            cd.Pelicula = "";
+            cd.Pelicula = "Tarzan";
+            cd.Genero = "Acción";
             cd.Edad = 18;
-            cd.Peso = 75;
+            cd.Peso = 57;
             disneyCharacterDatas.Add(cd);
 
             cd = new DisneyCharacterData();
-            cd.Nombre = "";
-            cd.Historia = "En este cue";
-            cd.Pelicula = "";
-            cd.Edad = 34;
-            cd.Peso = 34;
+            cd.Nombre = "Lilo Pelekai";
+            cd.Historia = "Lilo is a seven-year-old girl living on the island of Kauai with her older sister, Nani. On a rainy night, Lilo and Nani's parents were killed in a car accident, leaving the two sisters orphaned. With Nani being of age by the time of the tragedy, she was dubbed Lilo's legal guardian.";
+            cd.Pelicula = "Lilo & Stitch";
+            cd.Genero = "Comedia";
+            cd.Edad = 7;
+            cd.Peso = 23;
             disneyCharacterDatas.Add(cd);
 
             cd = new DisneyCharacterData();
-            cd.Nombre = "";
-            cd.Historia = "";
-            cd.Pelicula = "";
-            cd.Edad = 34;
-            cd.Peso = 34;
+            cd.Nombre = "Snow White";
+            cd.Historia = "A princess by birth, Snow White’s mother died shortly after her birth. After some time, her father, the King, remarried a vain and cold-hearted queen. Not long after their marriage, Snow White's beloved father suspiciously died, leaving the young princess as an orphan.";
+            cd.Pelicula = "Snow White and The Seven Dwarfs";
+            cd.Genero = "Romance";
+            cd.Edad = 14;
+            cd.Peso = 47;
             disneyCharacterDatas.Add(cd);
         }
     }
