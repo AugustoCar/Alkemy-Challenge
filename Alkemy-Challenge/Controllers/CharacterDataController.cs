@@ -18,49 +18,55 @@ namespace Alkemy_Challenge.Controllers
         }
 
         // GET: api/CharacterData/5
-        public DisneyCharacterData Get(string nombre ,string historia, string pelicula, string genero)
+
+
+        [HttpGet]
+        [Route("get/nombre")]
+        public DisneyCharacterData Get(string nombre)
         {
             DisneyCharacterData cdReturn = null;
             CharacterDataList cdLIst = new CharacterDataList();
-            foreach(DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
+            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
             {
-                if(cd.Nombre == nombre)
+                if (cd.Nombre == nombre)
                 {
                     cdReturn = cd;
                     break;
                 }
-            }
-
-            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
-            {
-                if (cd.Historia == historia)
+                else
                 {
-                    cdReturn = cd;
-                    break;
-                }
-            }
-
-            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
-            {
-                if (cd.Pelicula == pelicula)
-                {
-                    cdReturn = cd;
-                    break;
-                }
-            }
-
-            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
-            {
-                if (cd.Genero == genero)
-                {
-                    cdReturn = cd;
-                    break;
+                    cdReturn = new DisneyCharacterData();
+                    cdReturn.Mensaje = "Error";
                 }
             }
             return cdReturn;
         }
 
-        public DisneyCharacterData Get(int edad, int peso)
+        [HttpGet]
+        [Route("get/pelicula")]
+        public DisneyCharacterData GetPelicula(string pelicula)
+        {
+            DisneyCharacterData cdReturn = null;
+            CharacterDataList cdLIst = new CharacterDataList();
+            foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
+            {
+                if (cd.IdPelicula.Contains(pelicula))
+                {
+                    cdReturn = cd;
+                    break;
+                }
+                else
+                {
+                    cdReturn = new DisneyCharacterData();
+                    cdReturn.Mensaje = "Error";
+                }
+            }
+            return cdReturn;
+        }
+
+        [HttpGet]
+        [Route("get/edad")]
+        public DisneyCharacterData Get(int edad)
         {
             DisneyCharacterData cdReturn = null;
             CharacterDataList cdLIst = new CharacterDataList();
@@ -71,8 +77,22 @@ namespace Alkemy_Challenge.Controllers
                     cdReturn = cd;
                     break;
                 }
-            }
-            
+                 else 
+                {   
+                    cdReturn = new DisneyCharacterData(); 
+                    cdReturn.Mensaje = "Error"; 
+                }
+            }       
+            return cdReturn;
+        }
+
+        [HttpGet]
+        [Route("get/peso")]
+        public DisneyCharacterData GetPeso(int peso)
+        {
+
+            DisneyCharacterData cdReturn = null;
+            CharacterDataList cdLIst = new CharacterDataList();
             foreach (DisneyCharacterData cd in cdLIst.disneyCharacterDatas)
             {
                 if (cd.Peso == peso)
@@ -80,9 +100,32 @@ namespace Alkemy_Challenge.Controllers
                     cdReturn = cd;
                     break;
                 }
+                else
+                {
+                    cdReturn = new DisneyCharacterData();
+                    cdReturn.Mensaje = "Error";
+                }
             }
             return cdReturn;
 
+        }
+
+        [HttpGet]
+        [Route("character")]
+        public List<DisneyCharacterRespond> GetCharacter()
+        {
+            DisneyCharacterRespondList cdList = new DisneyCharacterRespondList();       
+                if (cdList.disneyCharacterRespond.Count > 0)
+                {               
+                    return cdList.disneyCharacterRespond;
+                }
+                else
+                {
+                    DisneyCharacterRespond cdCharacter = new DisneyCharacterRespond();
+                    cdList.disneyCharacterRespond.Add(cdCharacter);
+                    return cdList.disneyCharacterRespond;
+                }
+    
         }
 
         // POST: api/CharacterData
