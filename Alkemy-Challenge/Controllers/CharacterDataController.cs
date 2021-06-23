@@ -19,7 +19,6 @@ namespace Alkemy_Challenge.Controllers
 
         // GET: api/CharacterData/5
 
-
         [HttpGet]
         [Route("get/nombre")]
         public DisneyCharacterData Get(string nombre)
