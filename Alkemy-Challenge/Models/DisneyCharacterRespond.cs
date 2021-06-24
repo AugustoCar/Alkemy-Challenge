@@ -13,7 +13,7 @@ namespace Alkemy_Challenge.Models
 
     public class DisneyCharacterRespondList
     {
-        public List<DisneyCharacterRespond> disneyCharacterRespond { get; set; } = null;
+        public List<DisneyCharacterRespond> disneyCharacterRespond { get; set; } = new List<DisneyCharacterRespond>();
 
         public void CharacterRespondList()
         {

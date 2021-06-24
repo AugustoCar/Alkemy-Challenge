@@ -113,7 +113,7 @@ namespace Alkemy_Challenge.Controllers
         [Route("character")]
         public List<DisneyCharacterRespond> GetCharacter()
         {
-            DisneyCharacterRespondList cdList = new DisneyCharacterRespondList();       
+            DisneyCharacterRespondList cdList = new DisneyCharacterRespondList();
                 if (cdList.disneyCharacterRespond.Count > 0)
                 {               
                     return cdList.disneyCharacterRespond;
