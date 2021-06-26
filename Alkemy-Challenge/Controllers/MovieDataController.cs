@@ -84,37 +84,26 @@ namespace Alkemy_Challenge.Controllers
             {
                 return cdList.disneyMovieRespond;
             }
-            else
-            {
-                DisneyMovieRespond cdMovie = new DisneyMovieRespond();
-                cdMovie.Mensaje = "Error";
-                cdList.disneyMovieRespond.Add(cdMovie);
-                return cdList.disneyMovieRespond;
-            }
-
+            
+            return null;
         }
 
         [HttpGet]
         [Route("moviesDetails")]
-        public CharacterDetail GetMovieDetails(string titulo)
+        public DisneyMovieData GetMovieDetails(string titulo)
         {
-            CharacterDetail cdReturn = null;
-            CharacterDetailList cdLIst = new CharacterDetailList();
-            foreach (CharacterDetail cd in cdLIst.characterDetail)
+            DisneyMovieData cdReturn = null;
+            List<DisneyMovieData> cdLIst = HomeController.disneyMovieData;
+            foreach (DisneyMovieData cd in cdLIst)
             {
                 if (cd.Titulo == titulo)
                 {
                     cdReturn = cd;
                     break;
                 }
-                else
-                {
-                    cdReturn = new CharacterDetail();
-                    cdReturn.Mensaje = "Error";
-                }
+               
             }
             return cdReturn;
-
         }
 
         [HttpPost]

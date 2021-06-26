@@ -10,13 +10,18 @@ namespace Alkemy_Challenge.Controllers
     public class HomeController : Controller
     {
         static public List<DisneyCharacterData> homeCdList = new List<DisneyCharacterData>();
-        static public List<DisneyMovieData> disneyMovieData { get; set; } = new List<DisneyMovieData>();
+        //static public List<UserData> userList = new List<UserData>();
+        //static public List<UserData> logUsers = new List<UserData>();
+        static public List<DisneyMovieData> disneyMovieData = new List<DisneyMovieData>();
+        //public static Random random = new Random();
+        //public static List<Random> tokenStorage = new List<Random>();
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
 
             loadCharacters();
             loadMovies();
+            //loadUser();
             
             return View();
         }
@@ -98,6 +103,17 @@ namespace Alkemy_Challenge.Controllers
             cd.Genero = "Romance";
             disneyMovieData.Add(cd);
         }
+        //public void loadUser()
+        //{
+        //    userList = new List<UserData>();
+        //    UserData cd = new UserData();
+        //    cd.User = "Admin";
+        //    cd.Password = "1234";
+        //    cd.Token = random;
+        //    userList.Add(cd);
+        
+        //}
+
 
     }
    

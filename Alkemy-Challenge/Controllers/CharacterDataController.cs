@@ -14,10 +14,33 @@ namespace Alkemy_Challenge.Controllers
     {
 
         public List<DisneyCharacterData> cdLIst = new List<DisneyCharacterData>();
+        //public List<UserData> userLog = new List<UserData>();
         public CharacterDataController()
         {
             cdLIst = HomeController.homeCdList;
+            //userLog = HomeController.logUsers;
         }
+
+        //public Boolean authorization(Random token)
+        //{
+        //    Boolean b = false;
+        //    if (HomeController.tokenStorage.Count > 0)
+        //    {
+        //        for(int i = 0; i < HomeController.tokenStorage.Count; i++)
+        //        {
+        //            if (HomeController.tokenStorage[i] == token)
+        //            {
+        //                b = true;
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                b = false;
+        //            }
+        //        }
+        //    }
+        //    return b;
+        //}
 
         // GET: api/CharacterData
         [HttpGet]
@@ -124,13 +147,8 @@ namespace Alkemy_Challenge.Controllers
             {               
                 return cdList.disneyCharacterRespond;
             }
-            else
-            {
-                DisneyCharacterRespond cdCharacter = new DisneyCharacterRespond();
-                cdList.disneyCharacterRespond.Add(cdCharacter);
-                return cdList.disneyCharacterRespond;
-            }
-    
+            
+            return null;
         }
 
         [HttpPost]

@@ -16,13 +16,5 @@ namespace Alkemy_Challenge.Models
         public string Mensaje { get; set; }
     }
 
-    public class CharacterDataList
-    {
-        public List<DisneyCharacterData> disneyCharacterDatas { get; set; } = null;
-        public CharacterDataList()
-        {
-           
-           
-        }
-    }
+
 }
