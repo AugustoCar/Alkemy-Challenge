@@ -15,8 +15,9 @@ namespace Alkemy_Challenge.Models
     {
         public List<DisneyCharacterRespond> disneyCharacterRespond { get; set; } = new List<DisneyCharacterRespond>();
 
-        public void CharacterRespondList()
+        public DisneyCharacterRespondList()
         {
+
             disneyCharacterRespond = new List<DisneyCharacterRespond>();
             DisneyCharacterRespond cd = new DisneyCharacterRespond();
             cd.Imagen = "https://img.ecartelera.com/noticias/fotos/54500/54576/1.jpg";

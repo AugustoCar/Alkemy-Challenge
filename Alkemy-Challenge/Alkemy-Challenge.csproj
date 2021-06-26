@@ -157,14 +157,19 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CharacterDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovieDataController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DisneyCharacterRespond.cs" />
+    <Compile Include="Models\Request\EditCharacter.cs" />
+    <Compile Include="Models\Request\EditRequest.cs" />
+    <Compile Include="Models\Respond\CharacterDetail.cs" />
+    <Compile Include="Models\Respond\DisneyCharacterRespond.cs" />
     <Compile Include="Models\DisneyGenreData.cs" />
     <Compile Include="Models\DisneyMovieData.cs" />
     <Compile Include="Models\DisneyCharacterData.cs" />
+    <Compile Include="Models\Respond\DisneyMovieRespond.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +226,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CharacterData\" />
+    <Folder Include="Views\MovieData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
